@@ -9,9 +9,9 @@
   --paper-raised: #f7f8f2;
   --ink: #16262b;        /* deep teal-black — body text */
   --ink-soft: #4a5a58;   /* muted text */
-  --amber: #cf9a35;      /* UV-glow amber — primary accent */
-  --amber-deep: #a97b24;
-  --teal: #2f6f6b;       /* chromatogram teal — secondary accent */
+  --amber: #bbd57b;      /* UV-glow amber — primary accent */
+  --amber-deep: #285430;
+  --teal: #bc4749;       /* chromatogram teal — secondary accent */
   --line: #cdd0c0;       /* hairline dividers */
 
   --display: "Fraunces", Georgia, serif;
