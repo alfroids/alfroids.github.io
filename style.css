@@ -1,0 +1,271 @@
+/* ============================================================
+   Design tokens
+   Palette nods to lab materials: agar-pale background, deep
+   ink-teal text, an ethidium-glow amber for emphasis, and a
+   chromatogram teal for secondary accents.
+   ============================================================ */
+:root {
+  --paper: #eef0e6;      /* pale sage — agar plate */
+  --paper-raised: #f7f8f2;
+  --ink: #16262b;        /* deep teal-black — body text */
+  --ink-soft: #4a5a58;   /* muted text */
+  --amber: #cf9a35;      /* UV-glow amber — primary accent */
+  --amber-deep: #a97b24;
+  --teal: #2f6f6b;       /* chromatogram teal — secondary accent */
+  --line: #cdd0c0;       /* hairline dividers */
+
+  --display: "Fraunces", Georgia, serif;
+  --body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; }
+
+a {
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--amber-deep); }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------- Header / nav ---------------- */
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-raised);
+}
+
+.site-header-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 22px 24px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-name {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav.loci {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+nav.loci a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+}
+nav.loci a .tag {
+  color: var(--amber-deep);
+  margin-right: 5px;
+}
+nav.loci a:hover,
+nav.loci a[aria-current="page"] {
+  color: var(--ink);
+}
+nav.loci a[aria-current="page"] {
+  border-bottom: 1px solid var(--amber);
+}
+
+/* ---------------- Diversity bar (signature motif) ----------------
+   A strip of varying-height bars, styled after an allele-frequency
+   spectrum, used as a divider between sections. Not literal data —
+   a decorative echo of the subject. */
+
+.bar-divider {
+  display: block;
+  width: 100%;
+  height: 28px;
+  margin: 0;
+}
+.bar-divider rect { fill: var(--teal); }
+.bar-divider rect:nth-child(3n) { fill: var(--amber); }
+.bar-divider rect:nth-child(5n) { fill: var(--ink-soft); opacity: 0.5; }
+
+/* ---------------- Hero ---------------- */
+
+.hero {
+  padding: 56px 0 40px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+h1.display {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 24px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button:hover {
+  background: var(--ink);
+  color: var(--paper-raised);
+}
+.button.primary {
+  background: var(--amber);
+  border-color: var(--amber-deep);
+  color: var(--ink);
+}
+.button.primary:hover {
+  background: var(--amber-deep);
+  color: var(--paper-raised);
+}
+
+/* ---------------- Sections ---------------- */
+
+main { padding-bottom: 64px; }
+
+section.block {
+  padding: 44px 0;
+  border-bottom: 1px solid var(--line);
+}
+section.block:last-of-type { border-bottom: none; }
+
+h2.section-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  margin: 0 0 6px;
+}
+
+.section-lede {
+  color: var(--ink-soft);
+  max-width: 62ch;
+  margin: 0 0 24px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 640px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px;
+}
+
+.card h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.tag-code {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--amber-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+ul.plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.plain li {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+ul.plain li:first-child { border-top: none; }
+
+.placeholder {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.contact-list {
+  display: grid;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+}
+
+/* ---------------- Footer ---------------- */
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+}
+footer.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
