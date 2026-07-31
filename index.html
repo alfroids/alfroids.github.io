@@ -1,72 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[Your Name] — Genetics &amp; Evolutionary Biology</title>
-<meta name="description" content="[One-sentence description of you and your work, for search engines and link previews]">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Name] — [Your Title]</title>
+<meta name="description" content="[Write a one-sentence description of you/your research for search engines and link previews]">
+
+<!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (utility/mono) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site">
-  <div class="site-header-inner">
-    <a class="site-name" href="index.html">[Your Name]</a>
-    <nav class="loci" aria-label="Primary">
-      <a href="index.html" aria-current="page"><span class="tag">A</span>Home</a>
-      <a href="research.html"><span class="tag">B</span>Research</a>
-      <a href="publications.html"><span class="tag">C</span>Publications</a>
-      <a href="games.html"><span class="tag">D</span>Games</a>
-      <a href="cv.html"><span class="tag">E</span>CV / Contact</a>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="nav-name">[Your Name]</span>
+      <span class="nav-tagline">Genetics &amp; Evolutionary Biology</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#research">Research</a>
+      <a href="#gamedev">Game Dev</a>
+      <a href="#posts">Posts</a>
+      <a href="[link to your CV PDF]">CV</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <section class="hero">
-      <p class="eyebrow">University of São Paulo · Genetics and Evolutionary Biology</p>
-      <h1 class="display">[Your Name]</h1>
-      <p class="subtitle">
-        PhD candidate studying the evolutionary processes shaping diversity and population
-        structure at the human HLA genes, in the MHC region.
-        [Add a sentence or two more about your angle, methods, or what drew you to this question.]
-      </p>
-      <div class="cta-row">
-        <a class="button primary" href="research.html">See my research</a>
-        <a class="button" href="cv.html">Contact me</a>
-      </div>
-    </section>
-  </div>
+<main id="top">
 
-  <svg class="bar-divider" viewBox="0 0 900 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="0.0" y="12" width="13.80" height="16"/><rect x="15.0" y="18" width="13.80" height="10"/><rect x="30.0" y="10" width="13.80" height="18"/><rect x="45.0" y="2" width="13.80" height="26"/><rect x="60.0" y="21" width="13.80" height="7"/><rect x="75.0" y="20" width="13.80" height="8"/><rect x="90.0" y="5" width="13.80" height="23"/><rect x="105.0" y="19" width="13.80" height="9"/><rect x="120.0" y="11" width="13.80" height="17"/><rect x="135.0" y="4" width="13.80" height="24"/><rect x="150.0" y="21" width="13.80" height="7"/><rect x="165.0" y="6" width="13.80" height="22"/><rect x="180.0" y="16" width="13.80" height="12"/><rect x="195.0" y="21" width="13.80" height="7"/><rect x="210.0" y="20" width="13.80" height="8"/><rect x="225.0" y="9" width="13.80" height="19"/><rect x="240.0" y="9" width="13.80" height="19"/><rect x="255.0" y="20" width="13.80" height="8"/><rect x="270.0" y="15" width="13.80" height="13"/><rect x="285.0" y="20" width="13.80" height="8"/><rect x="300.0" y="5" width="13.80" height="23"/><rect x="315.0" y="9" width="13.80" height="19"/><rect x="330.0" y="21" width="13.80" height="7"/><rect x="345.0" y="4" width="13.80" height="24"/><rect x="360.0" y="19" width="13.80" height="9"/><rect x="375.0" y="15" width="13.80" height="13"/><rect x="390.0" y="2" width="13.80" height="26"/><rect x="405.0" y="2" width="13.80" height="26"/><rect x="420.0" y="4" width="13.80" height="24"/><rect x="435.0" y="21" width="13.80" height="7"/><rect x="450.0" y="4" width="13.80" height="24"/><rect x="465.0" y="4" width="13.80" height="24"/><rect x="480.0" y="10" width="13.80" height="18"/><rect x="495.0" y="21" width="13.80" height="7"/><rect x="510.0" y="15" width="13.80" height="13"/><rect x="525.0" y="21" width="13.80" height="7"/><rect x="540.0" y="5" width="13.80" height="23"/><rect x="555.0" y="18" width="13.80" height="10"/><rect x="570.0" y="13" width="13.80" height="15"/><rect x="585.0" y="9" width="13.80" height="19"/><rect x="600.0" y="18" width="13.80" height="10"/><rect x="615.0" y="5" width="13.80" height="23"/><rect x="630.0" y="19" width="13.80" height="9"/><rect x="645.0" y="4" width="13.80" height="24"/><rect x="660.0" y="13" width="13.80" height="15"/><rect x="675.0" y="5" width="13.80" height="23"/><rect x="690.0" y="17" width="13.80" height="11"/><rect x="705.0" y="19" width="13.80" height="9"/><rect x="720.0" y="4" width="13.80" height="24"/><rect x="735.0" y="4" width="13.80" height="24"/><rect x="750.0" y="2" width="13.80" height="26"/><rect x="765.0" y="16" width="13.80" height="12"/><rect x="780.0" y="11" width="13.80" height="17"/><rect x="795.0" y="19" width="13.80" height="9"/><rect x="810.0" y="5" width="13.80" height="23"/><rect x="825.0" y="20" width="13.80" height="8"/><rect x="840.0" y="4" width="13.80" height="24"/><rect x="855.0" y="21" width="13.80" height="7"/><rect x="870.0" y="3" width="13.80" height="25"/><rect x="885.0" y="16" width="13.80" height="12"/></svg>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-motif" aria-hidden="true"></div>
+    <div class="hero-inner">
 
-  <div class="wrap">
-    <section class="block two-col">
-      <div class="card">
-        <p class="tag-code">Research</p>
-        <h3>HLA diversity &amp; population structure</h3>
-        <p>[Write 2–3 sentences summarizing your current research question, approach, and why it matters. Link to your Research page for detail.]</p>
-        <p><a href="research.html">Read more →</a></p>
+      <div class="hero-profile">
+        <div class="hero-photo">
+          <!-- Replace src below with your photo, e.g. assets/profile.jpg -->
+          <img src="[path to your photo]" alt="[Your Name]" onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty')">
+        </div>
+        <h1 class="hero-name">[Your Name]</h1>
+        <p class="hero-role">[Your Title, e.g. "PhD Candidate in Genetics and Evolutionary Biology"]</p>
+        <p class="hero-affiliation">[Your Institution, e.g. "University of São Paulo"]</p>
+
+        <ul class="social-row">
+          <li><a href="[mailto:you@example.com]" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          </a></li>
+          <li><a href="[your GitHub URL]" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          </a></li>
+          <li><a href="[your LinkedIn URL]" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17"/></svg>
+          </a></li>
+          <li><a href="[your Google Scholar URL]" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9.5 12 4l9 5.5-9 5.5-9-5.5Z"/><path d="M6.5 11.5V16c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.5"/></svg>
+          </a></li>
+          <li><a href="[your itch.io or game dev profile URL]" aria-label="itch.io">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 8 5 4h14l2 4M9 13.5a2 2 0 1 1-4 0M19 13.5a2 2 0 1 1-4 0"/></svg>
+          </a></li>
+        </ul>
       </div>
-      <div class="card">
-        <p class="tag-code">Game development</p>
-        <h3>Jams &amp; side projects</h3>
-        <p>[Write a couple of sentences about your game dev interests — engines/tools you use, and what you enjoy about game jams.]</p>
-        <p><a href="games.html">See my projects →</a></p>
+
+      <div class="hero-bio">
+        <span class="eyebrow">Welcome</span>
+        <h2>About me</h2>
+        <p>[Write 2–3 sentences introducing yourself: who you are, what you study, and why. e.g. what draws you to HLA/MHC evolution and human population diversity.]</p>
+        <p>[Optional second paragraph: your academic path so far — degrees, labs, key milestones.]</p>
+        <p>[Optional third paragraph: your interest in game development / game jams, and how it fits alongside your research, if you want to mention it here.]</p>
       </div>
-    </section>
-  </div>
+
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="section" id="research">
+    <div class="section-inner">
+      <span class="eyebrow eyebrow-green">Research</span>
+      <h2 class="section-title">What I study</h2>
+      <p class="section-lede">[One or two sentences framing your overall research question — e.g. what evolutionary processes shape HLA/MHC diversity across human populations.]</p>
+
+      <div class="card-grid">
+
+        <article class="card card-green">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M6 6c3 2 9 2 12 0M6 12c3 2 9 2 12 0M6 18c3 2 9 2 12 0"/></svg>
+          </div>
+          <h3>[Research topic 1, e.g. "Balancing selection at HLA loci"]</h3>
+          <p>[2–3 sentence description of this research thread.]</p>
+          <a class="card-link" href="[link, e.g. to a paper or project page]">[Learn more] →</a>
+        </article>
+
+        <article class="card card-green">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.2 8.6 10 15M14.8 8.6 14 15M9.6 6h4.8"/></svg>
+          </div>
+          <h3>[Research topic 2, e.g. "MHC diversity across populations"]</h3>
+          <p>[2–3 sentence description of this research thread.]</p>
+          <a class="card-link" href="[link]">[Learn more] →</a>
+        </article>
+
+        <article class="card card-green">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M7 19V9M12 19V5M17 19v7"/></svg>
+          </div>
+          <h3>[Research topic 3, e.g. "Methods for population genetics"]</h3>
+          <p>[2–3 sentence description of this research thread.]</p>
+          <a class="card-link" href="[link]">[Learn more] →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAME DEV ============ -->
+  <section class="section section-alt" id="gamedev">
+    <div class="section-inner">
+      <span class="eyebrow eyebrow-amber">Game Dev</span>
+      <h2 class="section-title">Game jams &amp; side projects</h2>
+      <p class="section-lede">[One or two sentences about your game dev interests — how often you jam, what tools/engines you use, what draws you to it.]</p>
+
+      <div class="card-grid">
+
+        <article class="card card-amber">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+          </div>
+          <h3>[Game title 1]</h3>
+          <p>[Game jam name, your role, and a short description. e.g. "Made for Ludum Dare 5X in 48 hours — a puzzle game about ___."]</p>
+          <a class="card-link" href="[link to itch.io page or repo]">[Play / view] →</a>
+        </article>
+
+        <article class="card card-amber">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+          </div>
+          <h3>[Game title 2]</h3>
+          <p>[Game jam name, your role, and a short description.]</p>
+          <a class="card-link" href="[link]">[Play / view] →</a>
+        </article>
+
+        <article class="card card-amber">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+          </div>
+          <h3>[Game title 3]</h3>
+          <p>[Game jam name, your role, and a short description.]</p>
+          <a class="card-link" href="[link]">[Play / view] →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POSTS / PUBLICATIONS ============ -->
+  <section class="section" id="posts">
+    <div class="section-inner">
+      <span class="eyebrow">Posts</span>
+      <h2 class="section-title">Writing &amp; publications</h2>
+      <p class="section-lede">[Optional intro sentence about what kind of writing lives here — papers, preprints, blog notes, etc.]</p>
+
+      <div class="post-list">
+
+        <a class="post-row" href="[link to post/paper 1]">
+          <div class="post-row-main">
+            <h3>[Post or publication title 1]</h3>
+            <p>[One-sentence excerpt or abstract snippet.]</p>
+          </div>
+          <div class="post-row-meta">
+            <span>[Date]</span>
+            <span>[Venue / journal, or "Blog post"]</span>
+          </div>
+        </a>
+
+        <a class="post-row" href="[link to post/paper 2]">
+          <div class="post-row-main">
+            <h3>[Post or publication title 2]</h3>
+            <p>[One-sentence excerpt or abstract snippet.]</p>
+          </div>
+          <div class="post-row-meta">
+            <span>[Date]</span>
+            <span>[Venue / journal, or "Blog post"]</span>
+          </div>
+        </a>
+
+        <a class="post-row" href="[link to post/paper 3]">
+          <div class="post-row-main">
+            <h3>[Post or publication title 3]</h3>
+            <p>[One-sentence excerpt or abstract snippet.]</p>
+          </div>
+          <div class="post-row-meta">
+            <span>[Date]</span>
+            <span>[Venue / journal, or "Blog post"]</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="site">
-  <div class="wrap">
-    <span>[Your Name] · [Lab or department name]</span>
-    <span>[email@example.com] · <a href="cv.html">More contact info</a></span>
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <p class="footer-line">
+      <span class="mono-tag">[ATCG]</span>
+      [Your Name] · [your email or a "Get in touch" link]
+    </p>
+    <ul class="social-row social-row-footer">
+      <li><a href="[mailto:you@example.com]" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+      </a></li>
+      <li><a href="[your GitHub URL]" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+      </a></li>
+      <li><a href="[your LinkedIn URL]" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17"/></svg>
+      </a></li>
+    </ul>
+    <p class="footer-copy">© [Year] [Your Name]. [Optional: "Built with GitHub Pages."]</p>
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
