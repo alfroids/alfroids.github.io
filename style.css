@@ -14,6 +14,7 @@
   --amber: #C4841A;
   --amber-soft: #F7EAD3;
   --coral: #C24B33;
+  --motif: #D9B23A;
 
   --shadow: 0 1px 2px rgba(27,33,29,0.04);
   --shadow-hover: 0 12px 24px rgba(27,33,29,0.08);
@@ -39,6 +40,7 @@
   --amber: #E2A63C;
   --amber-soft: #2E2618;
   --coral: #E07A5D;
+  --motif: #F0D065;
 
   --shadow: 0 1px 2px rgba(0,0,0,0.2);
   --shadow-hover: 0 16px 32px rgba(0,0,0,0.35);
@@ -103,13 +105,9 @@ ul{ list-style: none; margin:0; padding:0; }
   display:flex; align-items:center; justify-content:space-between;
   gap: 24px;
 }
-.nav-brand{ display:flex; flex-direction:column; line-height:1.2; }
+.nav-brand{ display:flex; align-items:center; }
 .nav-name{
   font-family: var(--font-display); font-weight:700; font-size:1.05rem;
-}
-.nav-tagline{
-  font-family: var(--font-mono); font-size:.68rem; letter-spacing:.04em;
-  color: var(--text-muted); text-transform: uppercase; margin-top:2px;
 }
 .nav-links{ display:flex; gap: 28px; }
 .nav-links a{
@@ -153,21 +151,28 @@ ul{ list-style: none; margin:0; padding:0; }
 
 .hero-motif{
   position:absolute; inset:0; z-index:0; pointer-events:none;
-  opacity:.55;
-  background-image:
-    radial-gradient(circle, var(--green) 1.6px, transparent 1.6px),
-    radial-gradient(circle, var(--amber) 1.6px, transparent 1.6px);
-  background-size: 46px 46px, 68px 68px;
-  background-position: 0 0, 24px 30px;
-  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 70% 20%, black, transparent 75%);
-          mask-image: radial-gradient(ellipse 60% 55% at 70% 20%, black, transparent 75%);
+  width: 100%; height: 100%;
+  opacity:.6;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 88%);
+          mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 88%);
 }
-[data-theme="dark"] .hero-motif{ opacity:.35; }
+.hero-motif .hex-line{
+  fill: none;
+  stroke: var(--motif);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+[data-theme="dark"] .hero-motif{ opacity:.4; }
 
 .hero-inner{
   position:relative; z-index:1;
   max-width: 1080px; margin:0 auto;
   display:grid; grid-template-columns: 300px 1fr; gap: 64px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 44px 48px;
+  box-shadow: var(--shadow-hover);
 }
 
 .hero-photo{
@@ -184,16 +189,36 @@ ul{ list-style: none; margin:0; padding:0; }
 .hero-role{ margin:0 0 .2em; color: var(--text); font-weight:500; }
 .hero-affiliation{ color: var(--text-muted); font-size:.92rem; margin-bottom:1.2em; }
 
-.social-row{ display:flex; gap:10px; }
+.social-row{ display:flex; gap:14px; }
 .social-row a{
-  width:36px; height:36px; border-radius:999px;
+  position: relative;
+  width:54px; height:54px; border-radius:999px;
   border:1px solid var(--border); background: var(--card-bg);
   display:flex; align-items:center; justify-content:center;
   color: var(--text-muted);
-  transition: color .2s ease, border-color .2s ease, transform .2s ease;
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease;
 }
-.social-row a svg{ width:16px; height:16px; }
-.social-row a:hover{ color: var(--green); border-color: var(--green); transform: translateY(-2px); }
+.social-row a svg{
+  position: relative; z-index: 1;
+  width:22px; height:22px;
+  transition: color .3s ease;
+}
+
+/* Sliding color fill, same idea as the content cards. Alternates between
+   the two accent colors so the row doesn't feel monochrome. */
+.social-row a::before{
+  content:"";
+  position:absolute; inset:0;
+  transform: translateY(100%);
+  transition: transform .32s ease;
+  z-index:0;
+}
+.social-row a::before{ background: linear-gradient(160deg, var(--green) 0%, #1F4E39 100%); }
+
+.social-row a:hover{ transform: translateY(-3px); border-color: var(--green); }
+.social-row a:hover::before{ transform: translateY(0); }
+.social-row a:hover svg{ color: #fff; }
 
 .hero-bio h2{ font-size: 1.5rem; }
 .hero-bio p{ max-width: 60ch; }
@@ -212,38 +237,62 @@ ul{ list-style: none; margin:0; padding:0; }
 }
 
 .card{
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px 26px;
   box-shadow: var(--shadow);
+  overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
+
+/* Fill animates in from behind the content on hover, rather than a flat
+   background swap, so the color arrives as a deliberate motion. */
+.card::before{
+  content:"";
+  position:absolute; inset:0;
+  transform: translateY(100%);
+  transition: transform .32s ease;
+  z-index:0;
+}
+.card-green::before{ background: linear-gradient(160deg, var(--green) 0%, #1F4E39 100%); }
+.card-amber::before{ background: linear-gradient(160deg, var(--amber) 0%, #96650F 100%); }
+
 .card:hover{
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
 .card-green:hover{ border-color: var(--green); }
 .card-amber:hover{ border-color: var(--amber); }
+.card:hover::before{ transform: translateY(0); }
+
+.card > *{ position: relative; z-index: 1; }
 
 .card-icon{
   width:42px; height:42px; border-radius:10px;
   display:flex; align-items:center; justify-content:center;
   margin-bottom: 18px;
+  transition: background .3s ease, color .3s ease;
 }
 .card-green .card-icon{ background: var(--green-soft); color: var(--green); }
 .card-amber .card-icon{ background: var(--amber-soft); color: var(--amber); }
 .card-icon svg{ width:20px; height:20px; }
+.card:hover .card-icon{ background: rgba(255,255,255,0.16); color: #fff; }
 
-.card h3{ font-size: 1.08rem; }
-.card p{ font-size:.94rem; }
+.card h3{ font-size: 1.08rem; transition: color .3s ease; }
+.card p{ font-size:.94rem; transition: color .3s ease; }
+.card:hover h3{ color: #fff; }
+.card:hover p{ color: rgba(255,255,255,0.85); }
 
 .card-link{
   display:inline-block; font-size:.88rem; font-weight:600;
   color: var(--green);
+  transition: color .3s ease;
 }
 .card-amber .card-link{ color: var(--amber); }
 .card-link:hover{ text-decoration: underline; }
+.card:hover .card-link{ color: #fff; }
 
 /* =========================================================
    POST LIST
@@ -275,8 +324,8 @@ ul{ list-style: none; margin:0; padding:0; }
 }
 .footer-line{ margin:0; font-size:.9rem; display:flex; align-items:center; gap:10px; }
 .footer-copy{ margin:0; font-size:.8rem; color: var(--text-muted); width:100%; order:3; padding-top:8px; }
-.social-row-footer a{ width:32px; height:32px; }
-.social-row-footer a svg{ width:14px; height:14px; }
+.social-row-footer a{ width:44px; height:44px; }
+.social-row-footer a svg{ width:18px; height:18px; }
 
 /* =========================================================
    RESPONSIVE

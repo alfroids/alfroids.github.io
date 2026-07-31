@@ -20,7 +20,6 @@
   <div class="nav-inner">
     <a href="#top" class="nav-brand">
       <span class="nav-name">[Your Name]</span>
-      <span class="nav-tagline">Genetics &amp; Evolutionary Biology</span>
     </a>
 
     <nav class="nav-links" id="nav-links">
@@ -28,7 +27,6 @@
       <a href="#gamedev">Game Dev</a>
       <a href="#posts">Posts</a>
       <a href="[link to your CV PDF]">CV</a>
-      <a href="#contact">Contact</a>
     </nav>
 
     <div class="nav-controls">
@@ -47,7 +45,19 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-motif" aria-hidden="true"></div>
+    <svg class="hero-motif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <pattern id="honeycomb" x="0" y="0" width="102" height="58.89" patternUnits="userSpaceOnUse">
+          <polygon class="hex-line" points="34.00,0.00 17.00,29.44 -17.00,29.44 -34.00,0.00 -17.00,-29.44 17.00,-29.44"/>
+          <polygon class="hex-line" points="34.00,58.89 17.00,88.33 -17.00,88.33 -34.00,58.89 -17.00,29.44 17.00,29.44"/>
+          <polygon class="hex-line" points="136.00,0.00 119.00,29.44 85.00,29.44 68.00,0.00 85.00,-29.44 119.00,-29.44"/>
+          <polygon class="hex-line" points="136.00,58.89 119.00,88.33 85.00,88.33 68.00,58.89 85.00,29.44 119.00,29.44"/>
+          <polygon class="hex-line" points="85.00,29.44 68.00,58.89 34.00,58.89 17.00,29.44 34.00,0.00 68.00,0.00"/>
+          <polygon class="hex-line" points="85.00,-29.44 68.00,0.00 34.00,0.00 17.00,-29.44 34.00,-58.89 68.00,-58.89"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#honeycomb)"/>
+    </svg>
     <div class="hero-inner">
 
       <div class="hero-profile">
@@ -66,14 +76,11 @@
           <li><a href="[your GitHub URL]" aria-label="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
           </a></li>
-          <li><a href="[your LinkedIn URL]" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17"/></svg>
-          </a></li>
           <li><a href="[your Google Scholar URL]" aria-label="Google Scholar">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9.5 12 4l9 5.5-9 5.5-9-5.5Z"/><path d="M6.5 11.5V16c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.5"/></svg>
           </a></li>
-          <li><a href="[your itch.io or game dev profile URL]" aria-label="itch.io">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 8 5 4h14l2 4M9 13.5a2 2 0 1 1-4 0M19 13.5a2 2 0 1 1-4 0"/></svg>
+          <li><a href="[your itch.io or game dev profile URL]" aria-label="Game projects">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 10.5v3M5.5 12h3"/><circle cx="15.5" cy="10.8" r=".6" fill="currentColor" stroke="none"/><circle cx="17.7" cy="13" r=".6" fill="currentColor" stroke="none"/></svg>
           </a></li>
         </ul>
       </div>
@@ -100,29 +107,26 @@
 
         <article class="card card-green">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M6 6c3 2 9 2 12 0M6 12c3 2 9 2 12 0M6 18c3 2 9 2 12 0"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8.3 6h7.4M7.5 12h9M8.3 18h7.4"/></svg>
           </div>
           <h3>[Research topic 1, e.g. "Balancing selection at HLA loci"]</h3>
           <p>[2–3 sentence description of this research thread.]</p>
-          <a class="card-link" href="[link, e.g. to a paper or project page]">[Learn more] →</a>
         </article>
 
         <article class="card card-green">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.2 8.6 10 15M14.8 8.6 14 15M9.6 6h4.8"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8.3 6h7.4M7.5 12h9M8.3 18h7.4"/></svg>
           </div>
           <h3>[Research topic 2, e.g. "MHC diversity across populations"]</h3>
           <p>[2–3 sentence description of this research thread.]</p>
-          <a class="card-link" href="[link]">[Learn more] →</a>
         </article>
 
         <article class="card card-green">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M7 19V9M12 19V5M17 19v7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 3c0 4-10 4-10 8s10 4 10 8"/><path d="M8.3 6h7.4M7.5 12h9M8.3 18h7.4"/></svg>
           </div>
           <h3>[Research topic 3, e.g. "Methods for population genetics"]</h3>
           <p>[2–3 sentence description of this research thread.]</p>
-          <a class="card-link" href="[link]">[Learn more] →</a>
         </article>
 
       </div>
@@ -140,7 +144,7 @@
 
         <article class="card card-amber">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 10.5v3M5.5 12h3"/><circle cx="15.5" cy="10.8" r=".6" fill="currentColor" stroke="none"/><circle cx="17.7" cy="13" r=".6" fill="currentColor" stroke="none"/></svg>
           </div>
           <h3>[Game title 1]</h3>
           <p>[Game jam name, your role, and a short description. e.g. "Made for Ludum Dare 5X in 48 hours — a puzzle game about ___."]</p>
@@ -149,7 +153,7 @@
 
         <article class="card card-amber">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 10.5v3M5.5 12h3"/><circle cx="15.5" cy="10.8" r=".6" fill="currentColor" stroke="none"/><circle cx="17.7" cy="13" r=".6" fill="currentColor" stroke="none"/></svg>
           </div>
           <h3>[Game title 2]</h3>
           <p>[Game jam name, your role, and a short description.]</p>
@@ -158,7 +162,7 @@
 
         <article class="card card-amber">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 10v4M6 12h4M15.5 11.2h.01M18 13.2h.01"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="4"/><path d="M7 10.5v3M5.5 12h3"/><circle cx="15.5" cy="10.8" r=".6" fill="currentColor" stroke="none"/><circle cx="17.7" cy="13" r=".6" fill="currentColor" stroke="none"/></svg>
           </div>
           <h3>[Game title 3]</h3>
           <p>[Game jam name, your role, and a short description.]</p>
@@ -218,7 +222,7 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="footer-inner">
     <p class="footer-line">
       <span class="mono-tag">[ATCG]</span>
@@ -230,9 +234,6 @@
       </a></li>
       <li><a href="[your GitHub URL]" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-      </a></li>
-      <li><a href="[your LinkedIn URL]" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17"/></svg>
       </a></li>
     </ul>
     <p class="footer-copy">© [Year] [Your Name]. [Optional: "Built with GitHub Pages."]</p>
