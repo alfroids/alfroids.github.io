@@ -2,45 +2,51 @@
    TOKENS
    ========================================================= */
 :root{
-  --bg: #F6F8F4;
-  --bg-alt: #EEF2EA;
-  --card-bg: #FFFFFF;
-  --text: #1B211D;
-  --text-muted: #566158;
-  --border: #DCE3D8;
+  --bg: #F0F1F2;
+  --bg-alt: #E2E3E6;
+  --card-bg: #F8F8F8;
+  --text: #0F1011;
+  --text-muted: #292A2E;
+  --border: #E2E3E6;
 
-  --green: #2E6B4F;
-  --green-soft: #E4EEE7;
-  --amber: #C4841A;
-  --amber-soft: #F7EAD3;
-  --coral: #C24B33;
-  --motif: #D9B23A;
+  --green: #82B536;
+  --green-soft: #D3F1A7;
+  --green-shade: #6A9A23;
+  --amber: #DA62AC;
+  --amber-soft: #FDD0EC;
+  --amber-shade: #CD519D;
+  --coral: #42B2D7;
+  --motif: #FBC828;
 
   --shadow: 0 1px 2px rgba(27,33,29,0.04);
   --shadow-hover: 0 12px 24px rgba(27,33,29,0.08);
 
   --font-display: "Space Grotesk", sans-serif;
+  /* --font-name: "Space Mono", monospace; */
+  --font-name: "Space Grotesk", sans-serif;
+  --font-mono: "Google Sans Code", monospace;
   --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
 
   --radius: 14px;
   --nav-h: 76px;
 }
 
 [data-theme="dark"]{
-  --bg: #14181C;
-  --bg-alt: #1B211D;
-  --card-bg: #1E2521;
-  --text: #E7ECE7;
-  --text-muted: #9BABA0;
-  --border: #2B322D;
+  --bg: #18191A;
+  --bg-alt: #1F1F21;
+  --card-bg: #111213;
+  --text: #E2E3E4;
+  --text-muted: #BFC1C4;
+  --border: #1F1F21;
 
-  --green: #4C9A73;
-  --green-soft: #1E2E27;
-  --amber: #E2A63C;
-  --amber-soft: #2E2618;
-  --coral: #E07A5D;
-  --motif: #F0D065;
+  --green: #5B7F24;
+  --green-soft: #BDE97C;
+  --green-shade: #4C6B1F;
+  --amber: #AE4787;
+  --amber-soft: #F797D2;
+  --amber-shade: #943D73;
+  --coral: #227D9B;
+  --motif: #693200;
 
   --shadow: 0 1px 2px rgba(0,0,0,0.2);
   --shadow-hover: 0 16px 32px rgba(0,0,0,0.35);
@@ -85,7 +91,7 @@ ul{ list-style: none; margin:0; padding:0; }
 .mono-tag{
   font-family: var(--font-mono);
   font-size: .8rem;
-  color: var(--green);
+  color: var(--coral);
   letter-spacing: .05em;
 }
 
@@ -102,16 +108,18 @@ ul{ list-style: none; margin:0; padding:0; }
 .nav-inner{
   max-width: 1080px; margin: 0 auto; height:100%;
   padding: 0 24px;
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center;
   gap: 24px;
 }
 .nav-brand{ display:flex; align-items:center; }
 .nav-name{
-  font-family: var(--font-display); font-weight:700; font-size:1.05rem;
+  font-family: var(--font-name); font-weight:700; font-size:1.2rem;
+  color: var(--green);
 }
-.nav-links{ display:flex; gap: 28px; }
+.nav-links{ display:flex; gap: 28px; margin-left: auto; }
 .nav-links a{
-  font-size:.92rem; font-weight:500; color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size:.84rem; font-weight:400; color: var(--text-muted);
   position:relative; padding: 4px 0;
   transition: color .2s ease;
 }
@@ -125,14 +133,27 @@ ul{ list-style: none; margin:0; padding:0; }
 
 .nav-controls{ display:flex; align-items:center; gap:12px; }
 .theme-toggle{
+  position: relative;
+  overflow: hidden;
   width:38px; height:38px; border-radius:999px;
   border:1px solid var(--border); background: var(--card-bg);
   color: var(--text); cursor:pointer;
   display:flex; align-items:center; justify-content:center;
-  transition: border-color .2s ease, transform .2s ease;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.theme-toggle::before{
+  content:"";
+  position:absolute;
+  top:-2px; left:-2px; right:-2px; bottom:-2px;
+  background: linear-gradient(160deg, var(--green) 0%, var(--green-shade) 100%);
+  transform: translateY(calc(100% + 4px));
+  transition: transform .32s ease;
+  z-index:0;
 }
 .theme-toggle:hover{ border-color: var(--green); transform: translateY(-1px); }
-.theme-toggle svg{ width:18px; height:18px; }
+.theme-toggle:hover::before{ transform: translateY(0); }
+.theme-toggle svg{ position:relative; z-index:1; width:18px; height:18px; transition: color .3s ease; }
+.theme-toggle:hover svg{ color:#fff; }
 .theme-toggle .icon-moon{ display:none; }
 [data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
 [data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
@@ -185,7 +206,7 @@ ul{ list-style: none; margin:0; padding:0; }
 .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .hero-photo.photo-empty{ display:flex; align-items:center; justify-content:center; }
 
-.hero-name{ font-size: 1.7rem; }
+.hero-name{ font-family: var(--font-name); font-size: 1.7rem; }
 .hero-role{ margin:0 0 .2em; color: var(--text); font-weight:500; }
 .hero-affiliation{ color: var(--text-muted); font-size:.92rem; margin-bottom:1.2em; }
 
@@ -214,7 +235,7 @@ ul{ list-style: none; margin:0; padding:0; }
   transition: transform .32s ease;
   z-index:0;
 }
-.social-row a::before{ background: linear-gradient(160deg, var(--green) 0%, #1F4E39 100%); }
+.social-row a::before{ background: linear-gradient(160deg, var(--green) 0%, var(--green-shade) 100%); }
 
 .social-row a:hover{ transform: translateY(-3px); border-color: var(--green); }
 .social-row a:hover::before{ transform: translateY(0); }
@@ -251,13 +272,14 @@ ul{ list-style: none; margin:0; padding:0; }
    background swap, so the color arrives as a deliberate motion. */
 .card::before{
   content:"";
-  position:absolute; inset:0;
-  transform: translateY(100%);
+  position:absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  transform: translateY(calc(100% + 4px));
   transition: transform .32s ease;
   z-index:0;
 }
-.card-green::before{ background: linear-gradient(160deg, var(--green) 0%, #1F4E39 100%); }
-.card-amber::before{ background: linear-gradient(160deg, var(--amber) 0%, #96650F 100%); }
+.card-green::before{ background: linear-gradient(160deg, var(--green) 0%, var(--green-shade) 100%); }
+.card-amber::before{ background: linear-gradient(160deg, var(--amber) 0%, var(--amber-shade) 100%); }
 
 .card:hover{
   transform: translateY(-5px);
@@ -351,7 +373,7 @@ ul{ list-style: none; margin:0; padding:0; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
-  *{ transition: none !important; scroll-behavior:auto !important; }
+  *{ transition: none !important; scroll-behavior:auto !important; animation: none !important; }
 }
 
 /* Visible keyboard focus */
