@@ -2,21 +2,21 @@
    TOKENS
    ========================================================= */
 :root{
-  --bg: #F0F1F2;
-  --bg-alt: #E2E3E6;
-  --card-bg: #F8F8F8;
-  --text: #0F1011;
-  --text-muted: #292A2E;
-  --border: #E2E3E6;
+  --bg: #E9ECF2;
+  --bg-alt: #DFE2E8;
+  --card-bg: #F0F3FA;
+  --text: #0B0B0D;
+  --text-muted: #25272B;
+  --border: #DFE2E8;
 
-  --green: #82B536;
-  --green-soft: #D3F1A7;
-  --green-shade: #6A9A23;
-  --amber: #DA62AC;
-  --amber-soft: #FDD0EC;
-  --amber-shade: #CD519D;
-  --coral: #42B2D7;
-  --motif: #FBC828;
+  --green: #83B828;
+  --green-soft: #C8E792;
+  --green-shade: #658E1F;
+  --amber: #EB63AB;
+  --amber-soft: #F6BBDC;
+  --amber-shade: #E53492;
+  --coral: #1463FF;
+  --motif: #9095A3;
 
   --shadow: 0 1px 2px rgba(27,33,29,0.04);
   --shadow-hover: 0 12px 24px rgba(27,33,29,0.08);
@@ -32,21 +32,21 @@
 }
 
 [data-theme="dark"]{
-  --bg: #18191A;
-  --bg-alt: #1F1F21;
-  --card-bg: #111213;
-  --text: #E2E3E4;
-  --text-muted: #BFC1C4;
-  --border: #1F1F21;
+  --bg: #0B0B0D;
+  --bg-alt: #131517;
+  --card-bg: #040505;
+  --text: #E9ECF2;
+  --text-muted: #CBCED4;
+  --border: #131517;
 
-  --green: #5B7F24;
-  --green-soft: #BDE97C;
-  --green-shade: #4C6B1F;
-  --amber: #AE4787;
-  --amber-soft: #F797D2;
-  --amber-shade: #943D73;
-  --coral: #227D9B;
-  --motif: #693200;
+  --green: #74A324;
+  --green-soft: #BDE37D;
+  --green-shade: #57791B;
+  --amber: #E84A9E;
+  --amber-soft: #F3A5D1;
+  --amber-shade: #E21D86;
+  --coral: #1463FF;
+  --motif: #5D626F;
 
   --shadow: 0 1px 2px rgba(0,0,0,0.2);
   --shadow-hover: 0 16px 32px rgba(0,0,0,0.35);
