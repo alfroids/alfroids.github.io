@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Your Name] — [Your Title]</title>
 <meta name="description" content="[Write a one-sentence description of you/your research for search engines and link previews]">
 
-<!-- Fonts: Space Grotesk (display), Inter (body), Space Mono ([Your Name]), Google Sans Code (utility/mono) -->
+<!-- Fonts: IBM Plex Mono (terminal chrome, headings) + IBM Plex Sans (body copy) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Google+Sans+Code:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -18,22 +18,19 @@
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
+    <span class="nav-dots" aria-hidden="true"><span></span><span></span></span>
     <a href="#top" class="nav-brand">
-      <span class="nav-name">[Your Name]</span>
+      <span class="nav-name"><span class="path">[your_name]@[institution]:~$</span> <span class="cursor"></span></span>
     </a>
 
     <nav class="nav-links" id="nav-links">
-      <a href="#research">RESEARCH</a>
-      <a href="#publications">PUBLICATIONS</a>
-      <a href="#gamedev">GAME DEV</a>
-      <a href="/assets/cv.pdf">CV</a>
+      <a href="#research">research</a>
+      <a href="#publications">publications</a>
+      <a href="#gamedev">gamedev</a>
+      <a href="/assets/cv.pdf">cv.pdf</a>
     </nav>
 
     <div class="nav-controls">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
-      </button>
       <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -43,69 +40,70 @@
 
 <main id="top">
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO — terminal window ============ -->
   <section class="hero">
-    <svg class="hero-motif" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <defs>
-        <pattern id="honeycomb" x="0" y="0" width="102" height="58.89" patternUnits="userSpaceOnUse">
-          <polygon class="hex-line" points="34.00,0.00 17.00,29.44 -17.00,29.44 -34.00,0.00 -17.00,-29.44 17.00,-29.44"/>
-          <polygon class="hex-line" points="34.00,58.89 17.00,88.33 -17.00,88.33 -34.00,58.89 -17.00,29.44 17.00,29.44"/>
-          <polygon class="hex-line" points="136.00,0.00 119.00,29.44 85.00,29.44 68.00,0.00 85.00,-29.44 119.00,-29.44"/>
-          <polygon class="hex-line" points="136.00,58.89 119.00,88.33 85.00,88.33 68.00,58.89 85.00,29.44 119.00,29.44"/>
-          <polygon class="hex-line" points="85.00,29.44 68.00,58.89 34.00,58.89 17.00,29.44 34.00,0.00 68.00,0.00"/>
-          <polygon class="hex-line" points="85.00,-29.44 68.00,0.00 34.00,0.00 17.00,-29.44 34.00,-58.89 68.00,-58.89"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#honeycomb)"/>
-    </svg>
-    <div class="hero-inner">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="title">profile.exe — bash</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="boot-log" id="boot-log" aria-live="polite"></div>
+        <p class="boot-hint" id="boot-hint">click to skip boot sequence</p>
 
-      <div class="hero-profile">
-        <div class="hero-photo">
-          <!-- Replace src below with your photo, e.g. assets/profile.jpg -->
-          <img src="/assets/profile.jpg" alt="[Your Name]" onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty')">
+        <div class="hero-content" id="hero-content">
+          <div class="hero-profile">
+            <div class="hero-photo">
+              <!-- Replace src below with your photo, e.g. assets/profile.jpg -->
+              <img src="/assets/profile.jpg" alt="[Your Name]" onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty')">
+            </div>
+            <h1 class="hero-name">[Your Name]</h1>
+            <p class="hero-role">[Your Title, e.g. "PhD Candidate in Genetics and Evolutionary Biology"]</p>
+            <p class="hero-affiliation">[Your Institution, e.g. "University of São Paulo"]</p>
+
+            <ul class="social-row">
+              <li><a href="[mailto:you@example.com]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                mail
+              </a></li>
+              <li><a href="[your GitHub URL]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork-icon lucide-git-fork"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>
+                github
+              </a></li>
+              <li><a href="[your Google Scholar URL]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                scholar
+              </a></li>
+              <li><a href="[your itch.io or game dev profile URL]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+                itch.io
+              </a></li>
+            </ul>
+          </div>
+
+          <div class="hero-bio">
+            <span class="eyebrow">cat about.md</span>
+            <h2>About me</h2>
+            <p>[Write 2–3 sentences introducing yourself: who you are, what you study, and why. e.g. what draws you to HLA/MHC evolution and human population diversity.]</p>
+            <p>[Optional second paragraph: your academic path so far — degrees, labs, key milestones.]</p>
+            <p>[Optional third paragraph: your interest in game development / game jams, and how it fits alongside your research, if you want to mention it here.]</p>
+          </div>
         </div>
-        <h1 class="hero-name">[Your Name]</h1>
-        <p class="hero-role">[Your Title, e.g. "PhD Candidate in Genetics and Evolutionary Biology"]</p>
-        <p class="hero-affiliation">[Your Institution, e.g. "University of São Paulo"]</p>
-
-        <ul class="social-row">
-          <li><a href="[mailto:you@example.com]" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-          </a></li>
-          <li><a href="[your GitHub URL]" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork-icon lucide-git-fork"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>
-          </a></li>
-          <li><a href="[your Google Scholar URL]" aria-label="Google Scholar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-          </a></li>
-          <li><a href="[your itch.io or game dev profile URL]" aria-label="Game projects">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
-          </a></li>
-        </ul>
       </div>
-
-      <div class="hero-bio">
-        <span class="eyebrow">Welcome</span>
-        <h2>About me</h2>
-        <p>[Write 2–3 sentences introducing yourself: who you are, what you study, and why. e.g. what draws you to HLA/MHC evolution and human population diversity.]</p>
-        <p>[Optional second paragraph: your academic path so far — degrees, labs, key milestones.]</p>
-        <p>[Optional third paragraph: your interest in game development / game jams, and how it fits alongside your research, if you want to mention it here.]</p>
-      </div>
-
     </div>
   </section>
 
   <!-- ============ RESEARCH ============ -->
   <section class="section" id="research">
     <div class="section-inner">
-      <span class="eyebrow eyebrow-green">Research</span>
+      <span class="eyebrow">./research --list</span>
       <h2 class="section-title">What I study</h2>
       <p class="section-lede">[One or two sentences framing your overall research question — e.g. what evolutionary processes shape HLA/MHC diversity across human populations.]</p>
 
       <div class="card-grid">
 
         <article class="card card-green">
+          <span class="card-index">[00]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dna-icon lucide-dna"><path d="m10 16 1.5 1.5"/><path d="m14 8-1.5-1.5"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="m16.5 10.5 1 1"/><path d="m17 6-2.891-2.891"/><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="m20 9 .891.891"/><path d="M3.109 14.109 4 15"/><path d="m6.5 12.5 1 1"/><path d="m7 18 2.891 2.891"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/></svg>
           </div>
@@ -114,6 +112,7 @@
         </article>
 
         <article class="card card-green">
+          <span class="card-index">[01]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dna-icon lucide-dna"><path d="m10 16 1.5 1.5"/><path d="m14 8-1.5-1.5"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="m16.5 10.5 1 1"/><path d="m17 6-2.891-2.891"/><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="m20 9 .891.891"/><path d="M3.109 14.109 4 15"/><path d="m6.5 12.5 1 1"/><path d="m7 18 2.891 2.891"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/></svg>
           </div>
@@ -122,6 +121,7 @@
         </article>
 
         <article class="card card-green">
+          <span class="card-index">[02]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dna-icon lucide-dna"><path d="m10 16 1.5 1.5"/><path d="m14 8-1.5-1.5"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="m16.5 10.5 1 1"/><path d="m17 6-2.891-2.891"/><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="m20 9 .891.891"/><path d="M3.109 14.109 4 15"/><path d="m6.5 12.5 1 1"/><path d="m7 18 2.891 2.891"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/></svg>
           </div>
@@ -136,7 +136,7 @@
   <!-- ============ PUBLICATIONS ============ -->
   <section class="section section-alt" id="publications">
     <div class="section-inner">
-      <span class="eyebrow">Publications</span>
+      <span class="eyebrow">ls publications/</span>
       <h2 class="section-title">Writing &amp; publications</h2>
       <p class="section-lede">[Optional intro sentence about what kind of writing lives here — papers, preprints, blog notes, etc.]</p>
 
@@ -144,7 +144,7 @@
 
         <a class="post-row" href="[link to post/paper 1]">
           <div class="post-row-main">
-            <h3>[Post or publication title 1]</h3>
+            <span class="filetag">[TYPE]</span><h3>[Post or publication title 1]</h3>
             <p>[One-sentence excerpt or abstract snippet.]</p>
           </div>
           <div class="post-row-meta">
@@ -155,7 +155,7 @@
 
         <a class="post-row" href="[link to post/paper 2]">
           <div class="post-row-main">
-            <h3>[Post or publication title 2]</h3>
+            <span class="filetag">[TYPE]</span><h3>[Post or publication title 2]</h3>
             <p>[One-sentence excerpt or abstract snippet.]</p>
           </div>
           <div class="post-row-meta">
@@ -166,7 +166,7 @@
 
         <a class="post-row" href="[link to post/paper 3]">
           <div class="post-row-main">
-            <h3>[Post or publication title 3]</h3>
+            <span class="filetag">[TYPE]</span><h3>[Post or publication title 3]</h3>
             <p>[One-sentence excerpt or abstract snippet.]</p>
           </div>
           <div class="post-row-meta">
@@ -182,37 +182,40 @@
   <!-- ============ GAME DEV ============ -->
   <section class="section" id="gamedev">
     <div class="section-inner">
-      <span class="eyebrow eyebrow-amber">Game Dev</span>
+      <span class="eyebrow eyebrow-accent2">./gamedev --list</span>
       <h2 class="section-title">Game jams &amp; side projects</h2>
       <p class="section-lede">[One or two sentences about your game dev interests — how often you jam, what tools/engines you use, what draws you to it.]</p>
 
       <div class="card-grid">
 
         <article class="card card-amber">
+          <span class="card-index">[00]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
           </div>
           <h3>[Game title 1]</h3>
           <p>[Game jam name, your role, and a short description. e.g. "Made for Ludum Dare 5X in 48 hours — a puzzle game about ___."]</p>
-          <a class="card-link" href="[link to itch.io page or repo]">[Play / view] →</a>
+          <a class="card-link" href="[link to itch.io page or repo]">./play →</a>
         </article>
 
         <article class="card card-amber">
+          <span class="card-index">[01]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
           </div>
           <h3>[Game title 2]</h3>
           <p>[Game jam name, your role, and a short description.]</p>
-          <a class="card-link" href="[link]">[Play / view] →</a>
+          <a class="card-link" href="[link]">./play →</a>
         </article>
 
         <article class="card card-amber">
+          <span class="card-index">[02]</span>
           <div class="card-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
           </div>
           <h3>[Game title 3]</h3>
           <p>[Game jam name, your role, and a short description.]</p>
-          <a class="card-link" href="[link]">[Play / view] →</a>
+          <a class="card-link" href="[link]">./play →</a>
         </article>
 
       </div>
@@ -225,8 +228,8 @@
 <footer class="footer">
   <div class="footer-inner">
     <p class="footer-line">
-      <span class="mono-tag">[ATCG]</span>
-      [Your Name] · [your email or a "Get in touch" link]
+      [your_name]@[institution]:~$ <span class="cursor"></span>
+      [your email or a "Get in touch" link]
     </p>
     <ul class="social-row social-row-footer">
       <li><a href="[mailto:you@example.com]" aria-label="Email">
