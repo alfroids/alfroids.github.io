@@ -172,6 +172,7 @@ ul{ list-style: none; margin:0; padding:0; }
 .terminal-titlebar .dot{ width:10px; height:10px; border-radius:50%; background: var(--border); }
 .terminal-titlebar .dot:nth-child(1){ background: var(--phosphor); }
 .terminal-titlebar .dot:nth-child(2){ background: var(--accent2); }
+.terminal-titlebar .dot:nth-child(3){ background: var(--cursor); }
 .terminal-titlebar .title{ margin-left:8px; }
 
 .terminal-body{ padding: 32px 36px 40px; cursor: pointer; }
