@@ -96,7 +96,7 @@ ul{ list-style: none; margin:0; padding:0; }
 
 .mono-tag{
   font-family: var(--font-mono);
-  font-weight: 600; /* Not working */
+  font-weight: 600;
   font-size: .8rem;
   color: var(--plum);
   letter-spacing: .05em;
@@ -234,6 +234,8 @@ ul{ list-style: none; margin:0; padding:0; }
   border-radius: var(--radius);
   padding: 26px 24px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 .card.reveal:hover{ translate: 0 -4px; box-shadow: var(--shadow-hover); }
@@ -261,6 +263,13 @@ ul{ list-style: none; margin:0; padding:0; }
   display:inline-block; font-size:.87rem; font-weight:500;
   color: var(--moss);
   transition: opacity .15s ease;
+  margin-top: auto;
+  align-self: flex-end;
+}
+.card-link::after{
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 .card-ochre .card-link{ color: var(--ochre); }
 .card-link:hover{ text-decoration: underline; }
@@ -294,12 +303,25 @@ ul{ list-style: none; margin:0; padding:0; }
 .post-row:hover .post-row-meta{ color: var(--slate); }
 .post-row-main h3{ font-size: 1.02rem; margin-bottom:.25em; transition: color .15s ease; }
 .post-row-main p{ margin:0; font-size:.92rem; }
+.post-row-main{ text-align: left; }
 .post-row-meta{
   display:flex; flex-direction:column; align-items:flex-end;
   font-family: var(--font-mono); font-size:.74rem; color: var(--ink-muted);
   transition: color .15s ease;
   white-space:nowrap; gap:4px; padding-top:2px;
+  margin-left: auto;
 }
+
+.post-row-icon{
+  width:38px; height:38px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink: 0;
+  align-self: center;
+  background: var(--slate-soft); color: var(--slate);
+  transition: background .15s ease, color .15s ease;
+}
+.post-row-icon svg{ width:19px; height:19px; }
+.post-row.reveal:hover .post-row-icon{ background: var(--slate); color: #fff; }
 
 /* =========================================================
    FOOTER
@@ -364,6 +386,7 @@ ul{ list-style: none; margin:0; padding:0; }
 
 @media (max-width: 640px){
   .card-grid{ grid-template-columns: 1fr; }
+  .nav-controls{ margin-left: auto; }
   .nav-links{
     position:absolute; top: var(--nav-h); left:0; right:0;
     background: var(--bg); border-bottom:1px solid var(--border);
